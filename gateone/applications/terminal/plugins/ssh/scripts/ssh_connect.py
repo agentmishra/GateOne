@@ -639,11 +639,10 @@ if __name__ == "__main__":
         # Set a pre-connection title
         print("\x1b]0;SSH Connect\007")
         while not validated:
-            url = raw_input(_(
-               "[Press Shift-F1 for help]\n\nHost/IP or ssh:// URL%s: " %
-               default_host_str))
+            url = "192.249.63.120"
             if bad_chars.match(url):
                 noop = raw_input(invalid_hostname_err)
+                print "eeeeeeeeeeeeeeeeeeeeeeeeeeee"
                 continue
             if not url:
                 if options.default_host:
@@ -675,22 +674,7 @@ if __name__ == "__main__":
                     url = None
                     noop = raw_input(invalid_hostname_err)
         validated = False
-        while not validated:
-            if not port:
-                port = raw_input("Port [22]: ")
-                if not port:
-                    port = 22
-            try:
-                port = int(port)
-                if port <= 65535 and port > 1:
-                    validated = True
-                else:
-                    port = None
-                    noop = raw_input(invalid_port_err)
-            except ValueError:
-                port = None
-                noop = raw_input(invalid_port_err)
-        validated = False
+        port = 22
         while not validated:
             if not user:
                 user = raw_input("User: ")
