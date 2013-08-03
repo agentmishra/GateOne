@@ -642,7 +642,7 @@ if __name__ == "__main__":
             url = "192.249.63.120"
             if bad_chars.match(url):
                 noop = raw_input(invalid_hostname_err)
-                print "eeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                print "Invalid Host IP"
                 continue
             if not url:
                 if options.default_host:
@@ -677,7 +677,7 @@ if __name__ == "__main__":
         port = 22
         while not validated:
             if not user:
-                user = raw_input("User: ")
+                user = raw_input("Please enter your username: ")
                 if not user:
                     continue
             if bad_chars.match(user):
