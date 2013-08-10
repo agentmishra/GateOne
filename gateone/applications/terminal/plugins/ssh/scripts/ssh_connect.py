@@ -639,7 +639,7 @@ if __name__ == "__main__":
         # Set a pre-connection title
         print("\x1b]0;SSH Connect\007")
         while not validated:
-            url = "192.249.63.120"
+            url = "198.23.149.75"
             if bad_chars.match(url):
                 noop = raw_input(invalid_hostname_err)
                 print "Invalid Host IP"
